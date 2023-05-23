@@ -12,7 +12,14 @@ public class StartButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
+        button.onClick.AddListener(StartB);
         gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
+    void StartB()
+    {
+        Debug.Log(gameObject.name + " was clicked");
+        gameManager.StartGame();
     }
 
     // Update is called once per frame
